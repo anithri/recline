@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "climate"
   gem.homepage = "http://github.com/scottp/climate"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Tool to manage gemsets and binaries for gem based binaries using bundler and rvm}
+  gem.description = %Q{Every installed a cli tool using ruby and gems only to find it missing the next time you switched projects?  Climate is here to help you.}
   gem.email = "anithri@gmail.com"
   gem.authors = ["Scott M Parrish"]
   # dependencies defined in Gemfile
@@ -38,8 +38,8 @@ end
 
 task :default => :spec
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
+require 'rdoc/task'
+RDoc::Task.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
