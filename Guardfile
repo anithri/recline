@@ -6,6 +6,6 @@ guard 'bundler' do
 end
 
 guard 'shell' do
-  watch('bin/climate') { puts "running climate..."; puts `bundle exec bin/climate show_options` + "\n" }
-  watch(%r{^lib/(.*)\.rb$}) { puts "running climate..."; puts `bundle exec bin/climate show_options` + "\n" }
+  watch('bin/climate') { puts "running climate..."; puts `bundle exec bin/climate` + "\n" }
+  watch(%r{^lib/(.*)\.rb$}) { puts "running climate..."; puts `bundle exec bin/climate` + "\n" }
 end

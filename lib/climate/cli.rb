@@ -1,4 +1,5 @@
 require 'configatron_plus'
+require 'climate/bundler.rb'
 
 module Climate
   class Cli < Thor
@@ -32,6 +33,8 @@ module Climate
       puts configatron.inspect
     end
 
+    register Climate::Bundler, "install", "bundle-install", "install gemfiles"
+    
     def initialize(*args)
       super(args)
       options.keys.each do |key|
