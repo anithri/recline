@@ -1,23 +1,23 @@
 require 'configatron_plus'
-require 'climate/bundler.rb'
+require 'recline/bundler.rb'
 
-module Climate
+module Recline
   class Cli < Thor
     include Thor::Actions
     add_runtime_options!
 
-    configatron.set_default(:conf_file,  ENV['CLIMATE_CONF_FILE']   || '~/.config/climate/climate.conf' )
-    configatron.conf.set_default(:gemfile_dir,ENV['CLIMATE_GEMFILE_DIR'] || '~/.config/climate' )
-    configatron.conf.set_default(:bin_dir,    ENV['CLIMATE_BIN_DIR']     || '~/.config/climate')
+    configatron.set_default(:conf_file,  ENV['RECLINE_CONF_FILE']   || '~/.config/recline/recline.conf' )
+    configatron.conf.set_default(:gemfile_dir,ENV['RECLINE_GEMFILE_DIR'] || '~/.config/recline' )
+    configatron.conf.set_default(:bin_dir,    ENV['RECLINE_BIN_DIR']     || '~/.config/recline')
 
 
     class_option :conf_file, :type =>:string, :aliases => "-c",
-                 :desc => "The path to the climate.conf file.  Also uses $CLIMATE_CONF_FILE",
+                 :desc => "The path to the recline.conf file.  Also uses $RECLINE_CONF_FILE",
                  :default => configatron.conf_file
 
     class_option :foo, :default => "bar"
-    desc "init", "Creates the climate.conf file."
-    long_desc "Creates the climate.conf file and populates settings using gemfile_dir and bin_dir"
+    desc "init", "Creates the recline.conf file."
+    long_desc "Creates the recline.conf file and populates settings using gemfile_dir and bin_dir"
     method_option :gemfile_dir, :type => :string, :aliases => '-g',
                   :desc => "The path to the directory used to store Gemfiles",
                   :default => configatron.conf.gemfile_dir
@@ -25,7 +25,7 @@ module Climate
                       :desc => "The path to the directory used to store gem based binaries",
                       :default => configatron.conf.bin_dir
     def init
-      template "templates/climate.conf.erb", options.conf_file
+      template "templates/recline.conf.erb", options.conf_file
     end
 
     desc "show_options", "Prints the current options in use"
@@ -33,7 +33,7 @@ module Climate
       puts configatron.inspect
     end
 
-    register Climate::Bundler, "install", "bundle-install", "install gemfiles"
+    register Recline::Bundler, "install", "bundle-install", "install gemfiles"
     
     def initialize(*args)
       super(args)

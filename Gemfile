@@ -5,7 +5,7 @@ gem "configatron"
 gem 'configatron-plus', "0.1.0", :path => "~/workspace/configatron-plus"
 
 group :development do
-  gem 'climate', "0.0.1", :path => '.'
+  gem 'recline', "0.0.2", :path => '.'
   gem "rdoc", "~> 3.8"
   gem "rspec", "~> 2.3.0"
   gem "bundler", "~> 1.0.0"

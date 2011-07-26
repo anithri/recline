@@ -14,11 +14,11 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "climate"
-  gem.homepage = "http://github.com/scottp/climate"
+  gem.name = "recline"
+  gem.homepage = "http://github.com/scottp/recline"
   gem.license = "MIT"
   gem.summary = %Q{Tool to manage gemsets and binaries for gem based binaries using bundler and rvm}
-  gem.description = %Q{Every installed a cli tool using ruby and gems only to find it missing the next time you switched projects?  Climate is here to help you.}
+  gem.description = %Q{Every installed a cli tool using ruby and gems only to find it missing the next time you switched projects?  Recline is here to help you.}
   gem.email = "anithri@gmail.com"
   gem.authors = ["Scott M Parrish"]
   # dependencies defined in Gemfile
@@ -43,7 +43,7 @@ RDoc::Task.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "climate #{version}"
+  rdoc.title = "recline #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

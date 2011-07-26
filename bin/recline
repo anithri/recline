@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 require "rubygems" # ruby1.9 doesn't "require" it though
-require "climate"
+require "recline"
 
-Climate::Cli.start
+Recline::Cli.start

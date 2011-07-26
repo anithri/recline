@@ -1,9 +1,14 @@
-= climate
+= recline
 
-Description goes here.
+Thor tasks to manage a gemfile, binaries, and shell functions to make using command line gems easier with RVM.
 
-== Contributing to climate
- 
+= work flow
+1.  recline init    # create the initial config file, and directories needed
+2.  recline add GEM # PENDING add the named gem to the gemfile, update bundle
+3.  recline         # PENDING create aliases or functions for new gemfile.
+
+== Contributing to recline
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project

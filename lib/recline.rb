@@ -1,6 +1,6 @@
 require 'thor'
-require 'climate/cli'
+require 'recline/cli'
 require 'configatron_plus'
-module Climate
+module Recline
   $thor_runner = false
 end
